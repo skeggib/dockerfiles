@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build dev
-      run: docker build . -f dev.Dockerfile
+      run: docker build . -f dev.Dockerfile -t dev
     - name: Build cpp_dev
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build dev
-      run: docker build . -f dev.Dockerfile
+      run: docker build . -f dev.Dockerfile -t dev
     - name: Build elm_dev
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
