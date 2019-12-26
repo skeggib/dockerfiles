@@ -1,0 +1,31 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+  cpp_dev:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build dev
+      run: docker build . -f dev.Dockerfile
+    - name: Build cpp_dev
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: skeggib/cpp_dev
+        dockerfile: cpp_dev.Dockerfile
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+  elm_dev:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build dev
+      run: docker build . -f dev.Dockerfile
+    - name: Build elm_dev
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: skeggib/elm_dev
+        dockerfile: elm_dev.Dockerfile
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
