@@ -12,7 +12,7 @@ RUN apt install -y tree
 RUN apt install -y screen
 
 RUN git clone https://github.com/skeggib/dotfiles.git
-RUN rm .bashrc .inputrc .vimrc
+RUN rm -f .bashrc .inputrc .vimrc
 RUN ln -s dotfiles/.bashrc .bashrc
 RUN ln -s dotfiles/.inputrc .inputrc
 RUN ln -s dotfiles/.vimrc .vimrc
