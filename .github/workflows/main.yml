@@ -29,3 +29,16 @@ jobs:
         dockerfile: elm_dev.Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+  scala_dev:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build dev
+      run: docker build . -f dev.Dockerfile -t dev
+    - name: Build scala_dev
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: skeggib/scala_dev
+        dockerfile: scala_dev.Dockerfile
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
