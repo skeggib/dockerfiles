@@ -1,7 +1,7 @@
 FROM dev
 
-RUN apt install -y gcc
-RUN apt install -y g++
-RUN apt install -y gdb
-RUN apt install -y make
-RUN apt install -y cmake
+RUN apt-get install -y gcc
+RUN apt-get install -y g++
+RUN apt-get install -y gdb
+RUN apt-get install -y make
+RUN apt-get install -y cmake

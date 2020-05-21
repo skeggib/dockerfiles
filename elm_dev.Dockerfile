@@ -1,6 +1,6 @@
 FROM dev
 
-RUN apt install -y npm
+RUN apt-get install -y npm
 
 RUN npm install -g elm-test elm-format
 
